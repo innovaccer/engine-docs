@@ -37,7 +37,7 @@ The real physics of software is the physics of people specifically, our limitati
 
 > TLDR: In recent years, thanks to Node.js, JavaScript has become the “lingua franca” of the web for both front and backend applications. This has given rise to awesome projects like Angular, React and Vue which improve developer productivity and enable the construction of fast, testable, and extensible frontend applications. However, while plenty of superb libraries, helpers, and tools exist for Node (and server-side JavaScript), none of them effectively solve the main problem - architecture.
 
-> engine Eninge provides an out-of-the-box application architecture which allows for effortless creation of highly testable, scalable, loosely coupled, and easily maintainable  largescale frontend web applications as set of independent micro frontends.
+> engine provides an out-of-the-box application architecture which allows for effortless creation of highly testable, scalable, loosely coupled, and easily maintainable  largescale frontend web applications as set of independent micro frontends.
 
 ## A Big Ball of Mud
 
@@ -118,9 +118,9 @@ Software Engineering also encompasses similar disciplinary practices and princip
 
 While developing engine, the above mentioned principles and philosophy has been adopted, incorporated and gave rise to abstractions that enforces developers to be confined to a sandbox environment  and keep them in check if any of such principles are violated  by not loading the faulty module. If any module depends on faulty module it won't load either , but rest of the modules can keep on functioning independently.In order to achieve this, separation of technical details such as WSGI server like Express.js, and MongoDB connector , ODM for Mongo , HTTPRequest Adapter etc which had nothing to do with the core business logic of engine need not to be part of engine code-base , but rather used behind our abstracted layer. This layer protects the system from complete teardown in the event we want to move from one third party library to another.
 
-Readers should go through this [presentation](https://www.slideshare.net/nzakas/scalable-javascript-application-architecture) by Nicholas Zakas, who has been inspiration and motivation behind engine Engine.
+Readers should go through this [presentation](https://www.slideshare.net/nzakas/scalable-javascript-application-architecture) by Nicholas Zakas, who has been inspiration and motivation behind Engine.
 
-engine Engine addresses some commonly occurring pitfalls 
+Engine addresses some commonly occurring pitfalls 
 
 * No/minimal chase the tail through code.
 * Writing rigid code .
@@ -130,9 +130,9 @@ engine Engine addresses some commonly occurring pitfalls 
 * Coupling/Dependency is high and in undesirable ways
 * Bulk of software design is managing dependencies
 
-engine Engine does do by providing as a very light and elegant layer which permitted us to migrate our existing Frontend monolith into separately installable packages. Each package can now be installed separately into engine , each package can provide a complete Frontend backed with Rest-APIs for that engine application into a plug and play application.
+Engine does do by providing as a very light and elegant layer which permitted us to migrate our existing Frontend monolith into separately installable packages. Each package can now be installed separately into engine , each package can provide a complete Frontend backed with Rest-APIs for that engine application into a plug and play application.
 
-   If any module in engine Engine , depends on any other functionality module in engine there will be no explicit source code level dependency but we use Dependency Injection to use the functionality exposed by a particular module.
+   If any module in Engine , depends on any other functionality module in engine there will be no explicit source code level dependency but we use Dependency Injection to use the functionality exposed by a particular module.
 
 Code snippet attached below , describes how to define a Package in engine.
 
@@ -251,13 +251,13 @@ If we talk about microservices in technical sense, compute, storage and network 
 
 > The complexity is still there, you're just moving it somewhere else.
 
-There is, of course, a mid-ground here which engine Engine is designed to leverage. We can build monolithic systems that are made up of in-process components, each of which has an explicit well-defined interface and set of responsibilities. This is old-school component-based design that talks about high cohesion and low coupling, but I usually sense some hesitation when I talk about it. And this seems odd to me.
+There is, of course, a mid-ground here which Engine is designed to leverage. We can build monolithic systems that are made up of in-process components, each of which has an explicit well-defined interface and set of responsibilities. This is old-school component-based design that talks about high cohesion and low coupling, but I usually sense some hesitation when I talk about it. And this seems odd to me.
 
 > Honesty in small things is not a small thing
 
 Thus the same old concept just replace all in-memory function calls or shared library calls with remote network calls, now  we can independently build, change, deploy and scale them with different teams who don’t have to know the existence of other teams. 
 
-Datsahop Engine is web development framework, which is designed from ground of with this philosophy in mind. If need arises , engine Engine Packages could be deployed and hosted as separate web services , once system hits the scale. 
+Engine is a pluggable component based web development framework, which is designed from ground of with this philosophy in mind. If need arises, Engine Packages could be deployed and hosted as separate web services , once system hits the scale.
 
 When you have a big monolithic frontend that can’t be split up easily, you have to think about making it smaller. You can decompose the frontend into separate components independently developed by different teams.
 
@@ -269,7 +269,7 @@ We have multiple teams that work on different applications. However you’re not
 [![Evolution](./micro-frontends/Single-frontend.png)](link)
 
 
-Backend teams can't deliver business value without the frontend being updated since an API without a user interface doesn't do much. More backend teams means more new features, and therefore more pressure is put on the frontend team(s) to integrate new features. 
+Backend teams can't deliver business value without the frontend being updated since an API without a user interface doesn't do much. More backend teams means more new features, and therefore more pressure is put on the frontend team(s) to integrate new features.
 
 To compensate for this it is possible to make the frontend team bigger or have multiple teams working on the same project. Because the frontend still has to be deployed in one go, teams cannot work independently. Changes have to be integrated in the same project and the whole project needs to be tested since a change can break other features.This would basically mean that the teams are not working independently. 
 
@@ -280,7 +280,7 @@ If you have a frontend small enough it can be maintained by a team which is also
 If you do have multiple teams working on your platform, but you were to have multiple smaller frontend applications there would have been no problem. Each frontend would act as the interface to one or more services. Each of these services will have their own persistence layer. This is known as vertical decomposition.
 
 
-engine Engine Provides us ability to do sort of vertical decomposition without completely abandoning our existing system , rather providing and improving the performance of the existing Angular application, along with the ability to develop new features and rewrite existing features to more modern and performance oriented engine Library such as React.js , Preact , Vue etcs.
+Engine Provides us ability to do sort of vertical decomposition without completely abandoning our existing system , rather providing and improving the performance of the existing Angular application, along with the ability to develop new features and rewrite existing features to more modern and performance oriented engine Library such as React.js , Preact , Vue etcs.
 
 [![Evolution](./micro-frontends/frontend-per-service.png)](link)
 
@@ -375,7 +375,7 @@ I had chance to interact with her and discussing this problem learning from her 
 
 We came to a following conclusion that results below are the most ideal for large scale enterprise grade frontend architecure.
 
-### engine Engine Test Cases
+### Engine Test Cases
 [![Evolution](./micro-frontends/app_shell_engine.png)](link)
 
 >Software architecture should never be a goal, but a means to an end
@@ -399,7 +399,7 @@ Hence with engine, developers can build their micro frontends and each applicati
 This helps us to create a bounded context for the complete web application.We will talk more about this approach , where we explore how Domain Driven Desing and Bounded Contenxt helps us to create reliable and performant large scale web applications.
 
 
-engine Engine provides with a nice and familiar ecosystem to every JavaScript developer to build, publish and install their micro-frotends into any engine based projects using natively provide NPM cli tool in a true plug and play format.
+Engine provides with a nice and familiar ecosystem to every JavaScript developer to build, publish and install their micro-frotends into any engine based projects using natively provide NPM cli tool in a true plug and play format.
 
 [![Evolution](./micro-frontends/engine_npm.png)](link)
 
