@@ -119,7 +119,8 @@ Software Engineering also encompasses similar disciplinary practices and princip
 * <b> Dependency Inversion.</b>
 
 
-While developing engine, the above mentioned principles and philosophy has been adopted, incorporated and gave rise to abstractions that enforces developers to be confined to a sandbox environment  and keep them in check if any of such principles are violated  by not loading the faulty module. If any module depends on faulty module it won't load either , but rest of the modules can keep on functioning independently.In order to achieve this, separation of technical details such as WSGI server like Express.js, and MongoDB connector , ODM for Mongo , HTTPRequest Adapter etc which had nothing to do with the core business logic of engine need not to be part of engine code-base , but rather used behind our abstracted layer. This layer protects the system from complete teardown in the event we want to move from one third party library to another.
+While developing engine, the above mentioned principles and philosophy has been adopted, incorporated and gave rise to abstractions that enforces developers to be confined to a sandbox environment  and keep them in check if any of such principles are violated  by not loading the faulty module. If any module depends on faulty module it won't load either , but rest of the modules can keep on functioning independently.In order to achieve this, separation of technical details such as WSGI server like Express.js, and MongoDB connector , ODM for Mongo , HTTPRequest Adapter etc which had nothing to do with the core business logic of Innovaccer's Healthcare Platform need not to be part of Innovaccer's product code-base , but rather used behind our abstracted layer. This layer protects the system from complete teardown in the event we want to move from one third party library to another.
+
 
 Readers should go through this [presentation](https://www.slideshare.net/nzakas/scalable-javascript-application-architecture) by Nicholas Zakas, who has been inspiration and motivation behind Engine.
 
@@ -133,7 +134,7 @@ Engine addresses some commonly occurring pitfalls 
 * Coupling/Dependency is high and in undesirable ways
 * Bulk of software design is managing dependencies
 
-Engine does do by providing as a very light and elegant layer which permitted us to migrate our existing Frontend monolith into separately installable packages. Each package can now be installed separately into engine , each package can provide a complete Frontend backed with Rest-APIs for that engine application into a plug and play application.
+Engine does so by providing as a very light and elegant layer which permitted us to migrate our existing Frontend monolith into separately installable packages. Each package can now be installed separately into engine , each package can provide a complete Frontend backed with Rest-APIs for that engine application into a plug and play application framework.
 
    If any module in Engine , depends on any other functionality module in engine there will be no explicit source code level dependency but we use Dependency Injection to use the functionality exposed by a particular module.
 
