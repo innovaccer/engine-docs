@@ -3,10 +3,10 @@
 > Loose coupling allows you to make changes to one module without affecting the others.
 
 
-* engine is an application development framework designed to take care of the connection points between existing popular frameworks and solve common integration problems with MongoDB, Node.js, Express, Web Services adapter and Angular, React, Vue, Mithril (any modern engine framework or lib) based applications. It is designed to give you a quick and organised way to start developing engine based web apps.
+* Engine is an application development framework designed to take care of the connection points between existing popular frameworks and solve common integration problems with MongoDB, Node.js, Express, Web Services adapter and Angular, React, Vue, Mithril (any modern ui development framework) based applications. It is designed to give you a quick and organised way to start developing engine based web apps.
 
 
-* engine promotes age-old idea of building smaller, loosely coupled, reusable piece of software that does one thing and one thing well for quicker time to market and cheaper cost of change.
+* Engine promotes age-old idea of building smaller, loosely coupled, reusable piece of software that does one thing and one thing well for quicker time to market and cheaper cost of change.
 
 * Everything in engine is a package and when need arises for extending engine with custom functionality , developers can do so creating their own package and do not need to alter the core packages.
 
@@ -46,10 +46,12 @@ The real physics of software is the physics of people specifically, our limitati
 Our existing Web Application is haphazardly structured, sprawling, sloppy, duct-tape and bailing wire, spaghetti code jungle. This system is showing unmistakable signs of unregulated growth, and repeated, expedient repair.
 Information is shared promiscuously among distant elements of the system, often to the point where nearly all the important information becomes global or duplicated. The overall structure of the system may never have been well defined. If it was, it may have eroded beyond recognition. Programmers with a shred of architectural sensibility shun these quagmires. Only those who are unconcerned about architecture, and, perhaps, are comfortable with the inertia of the day-to-day chore of patching the holes in these failing dikes, are content to work on such systems.
 Still, this approach endures and thrives and Big Ball of Mud has been proven Software Design Pattern . Why is this architecture so popular? Is it as bad as it seems, or might it serve as a way-station on the road to more enduring, elegant artifacts? What forces drive good programmers to build ugly systems? Can we avoid this? Should we? How can we make such systems better?
+
 Why does a system become a BIG BALL OF MUD? Sometimes, big, ugly systems emerge from THROWAWAY CODE. THROWAWAY CODE is quick-and-dirty code that was intended to be used only once and then discarded. However, such code often takes on a life of its own, despite casual structure and poor or non-existent documentation. It works, so why fix it? When a related problem arises, the quickest way to address it might be to expediently modify this working code, rather than design a proper, general program from the ground up. Over time, a simple throwaway program begets a BIG BALL OF MUD.
 <p align="center">
   <img src="./image.webp" />
 </p>
+
 How can we make sure we wind up behind the right door when the going gets tough?
 The answer is: craftsmanship.
 There are two parts to learning craftsmanship: knowledge and work. You must gain
@@ -67,7 +69,7 @@ Our ultimate agenda is to help drain these swamps. Where possible, architectural
 
 >A somewhat ramshackle rat's nest might be a state-of-the-art architecture for a poorly understood domain. This should not be the end of the story, though. As we gain more experience in such domains, we should increasingly direct our energies to gleaning more enduring architectural abstractions from them. http://www.laputan.org/mud/
 
-When we started developing engine, the understanding of the domain and vision of the product wasn't very clear.There is nothing special about it, we humans have tendency to believe our assumptions are very accurate however no matter how much we hate to admit it but we always fall short somewhere somehow. So you cannot build for everything or plan for every requirement that is going to come. When we can't plan for everything, then what we can do is to plan to be nimble. Undertaking development of something like engine at that time couldn't have been feasible because sheer time it would have taken to develop layers of abstraction required and secondly why we need to write these layers and abstraction wouldn't have made any sense back then.
+When we started developing Datashop, the understanding of the domain and vision of the product wasn't very clear.There is nothing special about it, we humans have tendency to believe our assumptions are very accurate however no matter how much we hate to admit it but we always fall short somewhere somehow. So you cannot build for everything or plan for every requirement that is going to come. When we can't plan for everything, then what we can do is to plan to be nimble. Undertaking development of something like engine at that time couldn't have been feasible because sheer time it would have taken to develop layers of abstraction required and secondly why we need to write these layers and abstraction wouldn't have made any sense back then.
 
 We needed a system, where we were in command and able to bend and mould, twist and rotate in different ways in order to meet a particular customer requirement and secure business.  
 A certain amount of controlled chaos is natural during construction, and can be tolerated, as long as you clean up after yourself eventually. Even beyond this though, a complex system may be an accurate reflection of our immature understanding of a complex problem. The class of systems that we can build at all may be larger than the class of systems we can build elegantly, at least at first.
@@ -76,11 +78,12 @@ A certain amount of controlled chaos is natural during construction, and can be 
 
 The economy is powered by the bytes today and in byte economy, the focus is on quickly bringing product to market.
 In competitive and disrupting decade of startups where we see software companies becoming some of the worlds most valuable companies ever created, startups spawns  and dies every day. To stay alive, sustain and gain substantial chunk of market share we want the factory running at top speed to produce software. These are human factories: thinking, feeling coders who are working from a product backlog or user story to create product.
+
 The manufacturing metaphor looms ever strong in such thinking. What we know about Cars is Germans do build very elegant and powerful luxury vehicles , but they aren't the most reliable ones. And they cater to a very niche audience who don't really care for reliability as they are going to change the car in a year or two, or to if its a business like hotel etc it will deprecate the asset over the period of time. Japanese seem to have done something very differently here, reason why Nissan GT-R and Nissan Skyline two very popular and mass produced on assembly line cars that are world famous. Every petrohead knows these cars as they would give Ferrari, Porsche and similar super cars produced by west a run for their money.
 
->The production aspects of Japanese auto manufacturing, of an assembly-line world, inspire much of Scrum.- Clean Code
+>The production aspects of Japanese auto manufacturing, of an assembly-line world, inspire much of Scrum. - Clean Code
 
-Japanese seem to have perfected the art  science of manufacturing high end luxury vehicles  which are more reliable than their western counterparts.
+Japanese seem to have perfected the ~~art~~ science of manufacturing high end luxury vehicles  which are more reliable than their western counterparts.
 
 A quality approach called Total Productive Maintenance (TPM) came on the Japanese scene. Its focus is on maintenance rather than on production. One of the major pillars of TPM is the set of so-called 5S principles. 5S is a set of disciplines.
 
@@ -156,14 +159,14 @@ const ESI = require('nodesi').middleware;
  * Dependency injection is used to define required modules
  */
 InGraph.register((app, datastore, database, gateway, admin, sources, worksets) => {
-  //We enable routing. By default the Package Object is passed to the routes
+  
   app.use(ESI({})); // Takes Array of hosts
 
   var view = InGraph.viewer();
   app.use(function (req, res, next) {
     res.locals._ = _;
     res.locals.loggedin = req.isAuthenticated();
-    res.locals.foo = InGraph.viewer();
+    res.locals.ingraph = InGraph.viewer();
     next();
   });
 
@@ -221,7 +224,7 @@ InGraph.register((app, datastore, database, gateway, admin, sources, worksets) =
     name: 'settings',
     menu: 'in-graph'
   });
-
+  //We enable routing. By default the Package Object is passed to the routes
   InGraph.routes(app, datastore, database, admin, pages);
   return InGraph;
 });
