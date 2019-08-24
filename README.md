@@ -4,7 +4,7 @@ Over the last decade, AngularJS has been one of the "coolest kids on the block�
 
 Everyone was happy in the web development world, but this happiness didn’t last long.
 
-## A Big Ball of Mud and JavaScript
+## JavaScript and Big Ball of Mud
 
 >While much attention has been focused on high-level software architectural patterns, what is, in effect, the de-facto standard software architecture is seldom discussed. This paper examines this most frequently deployed of software architectures: the BIG BALL OF MUD. A BIG BALL OF MUD is a casually, even haphazardly, structured system. Its organisation, if one can call it that, is dictated more by expediency than design. Yet, its enduring popularity cannot merely be indicative of a general disregard for architecture.- http://www.laputan.org/mud/
 
