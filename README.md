@@ -367,7 +367,7 @@ Micro frontend is a relatively new terminology, crowned as recent as 2016; howev
 
 Zalando open-sourced its solution which is called Project Mosaic.
 
-There is a framework already out there called [single-spa] (https://single-spa.js.org).
+There is a framework already out there called [single-spa](https://single-spa.js.org).
 
 The topic of micro frontends is being discussed quite a lot; web components-based development strategies have been gaining substantial momentum, and I believe this topic will be discussed more frequently in time.
 
