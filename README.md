@@ -20,9 +20,9 @@ Rewriting the whole frontend in React or Vue was not an option for us, especiall
 
 In our endeavor to refactor our existing single page monolith into a more elegant and performant architecture that is nimble in nature, we ended up creating UI Engine, which solves the complexity of engineering large scale JavaScript applications. In addition, it offers a flexible yet strict enforcement of certain essential rules, which are compulsory to follow as a precursor to building resilient web applications that a critical business sector like healthcare can rely on and are easier to test, maintain, change, and secure.
 
-> TLDR: In recent years, thanks to Node.js, JavaScript has become the “lingua franca” of the web for both front and backend applications. This has given rise to awesome projects like Angular, React and Vue which improve developer productivity and enable the construction of fast, testable, and extensible frontend applications. However, while plenty of superb libraries, helpers, and tools exist for Node (and server-side JavaScript), none of them effectively solve the main problem - architecture.[1]
+> TLDR: In recent years, thanks to Node.js, JavaScript has become the “lingua franca” of the web for both front and backend applications. This has given rise to awesome projects like Angular, React and Vue which improve developer productivity and enable the construction of fast, testable, and extensible frontend applications. However, while plenty of superb libraries, helpers, and tools exist for Node (and server-side JavaScript), none of them effectively solve the main problem - architecture.[1](https://docs.nestjs.com/#philosophy)
 
-The engine is an [Inversion of Control Container] (http://martinfowler.com/articles/injection.html "Inversion of Control Containers and the Dependency Injection pattern") that solves the problem of architecture for large scale complex JavaScript applications.
+The engine is an [Inversion of Control Container](http://martinfowler.com/articles/injection.html "Inversion of Control Containers and the Dependency Injection pattern") that solves the problem of architecture for large scale complex JavaScript applications.
 
 > Loose coupling allows you to make changes to one module without affecting the others.
 
